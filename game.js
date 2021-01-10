@@ -28,12 +28,29 @@ $(document).keypress(function () {
   }
 });
 
+// Click Hander for replay button
 $("#replay").click(() => {
 
   console.log("Replay clicked");
   replay();
 
 })
+
+// Click hander to start game via clicking H1
+$("h1").click(function () {
+  if (!gameStatus) {
+
+    // Change level of game
+    $("#level-title").text("Level " + level);
+
+    // Call next sequence
+    nextSequence();
+
+    // Change game status to start
+    gameStatus = true;
+  }
+});
+
 // Click Handler for button clicks
 $(".btn").click(function () {
 
